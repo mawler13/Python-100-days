@@ -1,0 +1,12 @@
+
+Weight = int(input("How much do you weigh?"))
+Height = int(input("How tall are you?"))
+
+bmi = Weight / (Height **2)
+
+if bmi <18:
+    print("You're underweight")
+elif bmi >=18.5 and bmi < 25:
+    print("You're weight is normal")
+else:
+    print("You're overweight")
