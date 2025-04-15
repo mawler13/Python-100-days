@@ -1,0 +1,26 @@
+# if else conditional statement
+#if condition:
+    #do this
+#else:
+    #do this
+#for example
+water_level =50
+if water_level> 80:
+    print("Drain water")
+else:
+    print("continue")
+
+print("Welcome to the rollercoaster!")
+height = int(input("What's your height in cm?"))
+#Comparison operators (>,<,>=,<=, ==(equal to) !=(not equal to) operator is a symbol that has a specific function.
+#this doesn't include 120 cm to include 120 you have to add the (>=)
+#Modulo operator % goes between numbers. It performs division and only brings back the remainder. 10/3 = 3.333333
+#with Modulo 10%3=1, In modulo 0 = even numbers
+if height > 120:
+    print("Congratulations! you can go on the ride")
+else:
+    print("You are too short to ride, sorry.")
+
+number_to_check =int(input("What what number do you want to check?" ))
+if number_to_check  % 2 ==0:
+    print("Even")

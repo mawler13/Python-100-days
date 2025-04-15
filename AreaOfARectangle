@@ -4,6 +4,4 @@ width = float(input("Enter the width: "))
 area = length * width
 print(f"The area is: {area} meters²")
 
-belt = "black"
-if belt =="black":
- print("You are a black belt")
+
