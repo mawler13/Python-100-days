@@ -1,0 +1,36 @@
+
+
+
+
+print("Welcome to the rollercoaster app!")
+
+height = int(input("How tall are you in cm?"))
+
+
+
+if height >=120:
+    print("You are tall enough to ride")
+   #set price based on age 
+    age = int(input("How old are you?"))
+    if age <=12:
+        bill = 5
+        print("Child tickets are $5")
+    elif age <= 18:
+        bill = 7
+        print("Youth tickets are $7")
+    else:
+        bill = 12
+        print("Adult tickets are $12")
+    #ask  if rider wants their picture taken
+
+    wants_photo = input("Do you want to have your picture taken? Type y for Yes and n for no: ")
+    if wants_photo == "y":
+    #add $3 to bill
+        #bill = bill + 3 same as bill+=3 so,
+        bill += 3
+    print(f"Your final bill is {bill}")
+else:
+    print("You are not tall enough to ride")
+    #After an if, elif, else, while, or for statement,
+#the very next line must be indented to show Python what should happen if the condition is true (or loop runs, etc.).
+
