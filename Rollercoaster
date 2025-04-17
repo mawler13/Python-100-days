@@ -1,7 +1,3 @@
-
-
-
-
 print("Welcome to the rollercoaster app!")
 
 height = int(input("How tall are you in cm?"))
