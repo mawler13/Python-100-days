@@ -2,10 +2,15 @@ print("Welcome to the rollercoaster app!")
 
 height = int(input("How tall are you in cm?"))
 
-
-
 if height >=120:
     print("You are tall enough to ride")
+    
+#adding military
+    is_military = input("Are you a veteran or active duty y/n?: ") .strip() .lower()
+
+#adding birthday
+    is_birthday = input("Is today your birthday y/n? : ") .strip() .lower ()
+  
    #set price based on age 
     age = int(input("How old are you?"))
     if age <=12:
@@ -14,9 +19,24 @@ if height >=120:
     elif age <= 18:
         bill = 7
         print("Youth tickets are $7")
+
+    elif age  >= 45 and age <= 55:  #added midlife crisis
+        print("Everything will be ok, have a free ride on us")
+        bill = 0  #setting it as a free ride 
+
     else:
         bill = 12
         print("Adult tickets are $12")
+
+#adding discounts
+    if is_military == "y":
+        print("Military discount applied : -$2")
+        bill -= 2
+    
+    if is_birthday == "y":
+        print("Birthday deal! You get $1 off!")
+        bill -= 1
+
     #ask  if rider wants their picture taken
 
     wants_photo = input("Do you want to have your picture taken? Type y for Yes and n for no: ")
@@ -24,7 +44,7 @@ if height >=120:
     #add $3 to bill
         #bill = bill + 3 same as bill+=3 so,
         bill += 3
-    print(f"Your final bill is {bill}")
+    print(f"Your final bill is ${bill}")
 else:
     print("You are not tall enough to ride")
     #After an if, elif, else, while, or for statement,
