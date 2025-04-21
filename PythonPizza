@@ -1,0 +1,57 @@
+print("Welcome to Python Pizza")
+S =  15
+M =  20
+L =  25
+
+size = input("What size pizza do you want L, M, S? : ") .strip().upper() 
+pepperoni = input("Do you want pepperoni on your piza? : Y or N ") .strip().upper() 
+extra_cheese = input("Do you want extra cheese on your pizza? : Y or N ") .strip().upper()
+
+#.strip() removes any leading/trailing spaces
+#.upper() converts input to uppercase (m becomes M)
+
+#calculate base price based on size
+if size== "S":
+    base_price = S 
+elif size== "M":
+    base_price = M 
+elif size== "L":
+    base_price = L 
+else:
+    print("We only have 3 sizes, pick again")
+    exit()
+    #base_price = 0 (saves the system from crashing if the user input in invalid)
+
+#else:this method keeps it cleaner and stops the program completely.
+    #print("Invalid size, exiting program.")
+    #exit()
+
+
+#You could also add a return or exit() to stop the program completely if the size is invalid. Example:
+#else:(example)
+    #print("We only have 3 sizes, pick again")
+    #exit() #this stops the program after bad input
+
+
+#add pepperoni price
+
+pepperoni_price = 0
+extra_cheese_price = 0
+if pepperoni == "Y":
+    if size == "S":
+        pepperoni_price = 2
+    else:
+        pepperoni_price = 3
+else:
+    pepperoni_price = 0
+#add extra cheese price
+
+if extra_cheese == "Y":
+    extra_cheese_price = 1
+else:
+    extra_cheese_price = 0
+#calculate total price
+
+total_price = base_price + pepperoni_price + extra_cheese_price
+
+print(f"Your total price is ${total_price}")

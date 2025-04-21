@@ -1,0 +1,92 @@
+print('''
+ ____________________________________________________________________
+ / \-----     ---------  -----------     -------------- ------    ----\
+ \_/__________________________________________________________________/
+ |~ ~~ ~~~ ~ ~ ~~~ ~ _____.----------._ ~~~  ~~~~ ~~   ~~  ~~~~~ ~~~~|
+ |  _   ~~ ~~ __,---'_       "         `. ~~~ _,--.  ~~~~ __,---.  ~~|
+ | | \___ ~~ /      ( )   "          "   `-.,' (') \~~ ~ (  / _\ \~~ |
+ |  \    \__/_   __(( _)_      (    "   "     (_\_) \___~ `-.___,'  ~|
+ |~~ \     (  )_(__)_|( ))  "   ))          "   |    "  \ ~~ ~~~ _ ~~|
+ |  ~ \__ (( _( (  ))  ) _)    ((     \\//    " |   "    \_____,' | ~|
+ |~~ ~   \  ( ))(_)(_)_)|  "    ))    //\\ " __,---._  "  "   "  /~~~|
+ |    ~~~ |(_ _)| | |   |   "  (   "      ,-'~~~ ~~~ `-.   ___  /~ ~ |
+ | ~~     |  |  |   |   _,--- ,--. _  "  (~~  ~~~~  ~~~ ) /___\ \~~ ~|
+ |  ~ ~~ /   |      _,----._,'`--'\.`-._  `._~~_~__~_,-'  |H__|  \ ~~|
+ |~~    / "     _,-' / `\ ,' / _'  \`.---.._          __        " \~ |
+ | ~~~ / /   .-' , / ' _,'_  -  _ '- _`._ `.`-._    _/- `--.   " " \~|
+ |  ~ / / _-- `---,~.-' __   --  _,---.  `-._   _,-'- / ` \ \_   " |~|
+ | ~ | | -- _    /~/  `-_- _  _,' '  \ \_`-._,-'  / --   \  - \_   / |
+ |~~ | \ -      /~~| "     ,-'_ /-  `_ ._`._`-...._____...._,--'  /~~|
+ | ~~\  \_ /   /~~/    ___  `---  ---  - - ' ,--.     ___        |~ ~|
+ |~   \      ,'~~|  " (o o)   "         " " |~~~ \_,-' ~ `.     ,'~~ |
+ | ~~ ~|__,-'~~~~~\    \"/      "  "   "    /~ ~~   O ~ ~~`-.__/~ ~~~|
+ |~~~ ~~~  ~~~~~~~~`.______________________/ ~~~    |   ~~~ ~~ ~ ~~~~|
+ |____~jrei~__~_______~~_~____~~_____~~___~_~~___~\_|_/ ~_____~___~__|
+ / \----- ----- ------------  ------- ----- -------  --------  -------\
+ \_/__________________________________________________________________/
+ ''')
+print("Welcome to treasure Island!")
+print("Your mission is to find the treasure") 
+
+
+answer = input("Are you ready? Type y or n ") .strip() .lower()
+
+if answer == 'y':
+    print("You're a brave soul")
+
+    path = input("You've landed on the island, you come to a crossroad, do you take left or right?" )
+    if path == "left":
+
+        print("You are ambushed and killed by an indigenous tribe. Game over" )
+    elif path == "right":
+
+        print("You find tracks leading to a pathway into the jungle.")
+        choice = input("Do you want to go left into the woods or right towards the river? type right or left :" ) .strip() .lower()
+
+        if choice == 'left':
+             print("You get lost in the woods, and die")
+
+        elif choice == 'right':
+            choice = input("You come to the river, and need to cross. Do you wait for a boat or swim across? Type wait or swim: ").strip().lower()
+            
+            if choice == 'wait':
+                print("As you wait a mysterious old man with a boat arrives to take you accross.:" )
+                print("On the other side you find an X on the ground,but it seems to easy: ")
+
+                dig_choice = input("Do you dig or decide to ignore it and move on? Type dig or move : ") .strip().lower()
+
+                if dig_choice == 'dig':
+                    print("As you dig, the ground begins to give way - it's quicksand! You sink before you can escape.Game over: ")
+
+                elif dig_choice == 'move':
+                    print("You decide to trust your instincts and move on : ")
+                    print("You walk deeper into the jungle and stumble upon a dark cave entrance : ")
+                    print("Carved into the cave walls are hieroglyphics glowing faintly..: ")
+                
+                    glyph_choice = input("Do you decide to enter the cave or stay outside? Type enter or stay: ").strip().lower()
+
+                if glyph_choice == 'enter':
+                    print("You step into the cave, the symbols begin to glow brighter: ")
+                    print("A hidden door opens... revealing a chamber full of gold and ancient relics: ")
+                    print("Congratulations you have found the treasure!: ")
+
+                elif glyph_choice == 'stay':
+                    print("You wait outside, but night falls and strange sounds fill the jungle. You are never seen again.: ")
+                    print("Game over.")
+                else:
+                    print("Frozen by indecision you are caught in a sudden landslide.Game over.: ")
+        else:
+            print("You stand too long trying to decide...and a venomous snake bites you. Game over. : ")
+
+    elif choice == 'swim':
+         print("The current is too strong, you struggle to stay above water and are pulled down by a crocodile. Game over:")
+
+            
+    else:
+            print("You wander around in circles, and succumb to dehydration.Game over : ")
+                
+    
+   
+       
+else:
+    print("Goodbye coward")
