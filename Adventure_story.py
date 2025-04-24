@@ -31,12 +31,12 @@ def jungle_path():
 
 def offer_torch():
     global inventory
-    choice = input("You see a torch nearby. Do you pick it up? Type yes or no. ").strip().lower()
+    choice = input("You see a torch nearby. Do you pick it up? Type yes or no: ").strip().lower()
     if choice == "yes":
         inventory.append("torch")
-        print("torch added to inventory")
+        print("Torch added to inventory.")
     else:
-        print("You leave the torch behind")
+        print("You leave the torch behind.")
 
 def river_crossing():
     global health, inventory
@@ -63,32 +63,27 @@ def river_crossing():
         else:
             print("You swim across safely.")
             offer_torch()
-            print("You find an X near some bushes... ")
-            print("It looks to easy something feels off")
+            print("You see an X marked on the ground near some bushes.")
+            print("It looks too easy... something feels off.")
             dig_decision()
     else:
         print("You wander around in circles and succumb to dehydration. Game over. ")
-    
+
 def dig_decision():
     global health, inventory
     dig_choice = input("Do you dig or decide to ignore it and move on? Type dig or move: ").strip().lower()
     if dig_choice == 'dig':
-        outcome = random.choice(["treasure", "nothing","trap"])
+        outcome = random.choice(["treasure", "nothing", "trap"])
         if outcome == "treasure":
-            print("You uncover a chest of gold coins. Lucky you! ")
+            print("You uncover a hidden chest with gold coins! Lucky you!")
             inventory.append("extra gold")
             cave_scene()
         elif outcome == "nothing":
-            print("You dig and you dig, and find nothing. You move on dissappointed")
+            print("You dig and dig... but find nothing but dirt. You move on disappointed.")
             cave_scene()
         elif outcome == "trap":
-            print("a trap springs, you fall into a shallow pit, and injure your leg. ")
-            health -= 25
-            print(f"Health :{health}")
-            if health <= 0:
-                print("You've succumbed to your injuries. Game over.")
-        else:
-            cave_scene()
+            print("A trap springs! You fall into a spike pit and don't survive. Game over.")
+            health = 0
     elif dig_choice == 'move':
         print("You decide to trust your instincts and move on.")
         print("You walk deeper into the jungle and stumble upon a dark cave entrance.")
@@ -106,7 +101,7 @@ def cave_scene():
     glyph_choice = input("Do you decide to enter the cave or stay outside? Type enter or stay: ").strip().lower()
     if glyph_choice == 'enter':
         if "torch" in inventory:
-            use_torch = input("You have a torch do you light it? type yes or no ").strip().lower()
+            use_torch = input("You have a torch. Do you want to light it? Type yes or no: ").strip().lower()
             if use_torch == "yes":
                 print("You light your torch and step into the cave. The symbols begin to glow brighter.")
                 print("A hidden door opens .... revealing a chamber full of gold and ancient relics.")
@@ -114,14 +109,9 @@ def cave_scene():
                 inventory.append("gold")
                 boss_fight()
             else:
-                print("Without a light. You stumble in the darkness and fall into a pit. Game over.")
+                print("Without light, you stumble in the darkness and fall into a pit. Game over.")
         else:
-            print("It's too dark to see you get lost in the cave never to be seen again. Game over. ")
-
-           
-            
-            
-        
+            print("It's too dark to see. You stumble and fall into a pit. Game over.")
     elif glyph_choice == 'stay':
         print("You wait outside, but night falls and strange sounds fill the jungle. You are never seen again. ")
         print("Game over.")
