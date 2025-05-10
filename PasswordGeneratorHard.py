@@ -19,11 +19,11 @@ nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 password_list = []
-for char in range (1,nr_letters + 1):
+for char in range (0 ,nr_letters  ):
     password_list.append(random.choice(letters))
-for char in range (1, nr_symbols + 1):
+for char in range (0, nr_symbols  ):
     password_list += random.choice(symbols)
-for char in range (1, nr_numbers + 1):
+for char in range (0, nr_numbers ):
     password_list += random.choice(numbers)
     
 
